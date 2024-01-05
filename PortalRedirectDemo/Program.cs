@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.Negotiate;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace PortalRedirectDemo
 {
@@ -10,6 +11,7 @@ namespace PortalRedirectDemo
 
             // Add services to the container.
             builder.Services.AddControllers();
+            builder.Services.Configure<RedirectSettings>(builder.Configuration.GetSection("RedirectSettings"));
 
             builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
                 .AddNegotiate();
