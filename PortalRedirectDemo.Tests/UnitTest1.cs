@@ -1,3 +1,5 @@
+global using Xunit;
+
 namespace PortalRedirectDemo.Tests
 {
     public class UnitTest1
