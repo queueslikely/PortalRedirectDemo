@@ -1,4 +1,4 @@
-﻿namespace PortalRedirectDemo
+﻿namespace PortalRedirectDemo.Models
 {
     public class RedirectSettings
     {
