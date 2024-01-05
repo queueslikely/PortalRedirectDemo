@@ -6,7 +6,6 @@ using Moq;
 using PortalRedirectDemo.Controllers;
 using PortalRedirectDemo.Models;
 using System.Security.Claims;
-using System.Security.Principal;
 
 namespace PortalRedirectDemo.Tests
 {

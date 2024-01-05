@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Authentication.Negotiate;
-using Microsoft.Extensions.DependencyInjection;
 using PortalRedirectDemo.Models;
 
 namespace PortalRedirectDemo
