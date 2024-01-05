@@ -12,6 +12,7 @@ namespace PortalRedirectDemo
 
             // Add services to the container.
             builder.Services.AddControllers();
+
             builder.Services.Configure<RedirectSettings>(builder.Configuration.GetSection("RedirectSettings"));
 
             builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
