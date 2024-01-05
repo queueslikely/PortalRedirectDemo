@@ -1,0 +1,6 @@
+@PortalRedirectDemo_HostAddress = http://localhost:5118
+
+GET {{PortalRedirectDemo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
