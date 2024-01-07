@@ -19,25 +19,16 @@ namespace PortalRedirectDemo.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            // Student
-            if (User.IsInRole(redirectSettings.Redirects["Student"].GroupName))
+            // Redirect if the user is in a configured group
+            foreach (KeyValuePair<string, Redirect> redirectSection in redirectSettings.Redirects)
             {
-                return Redirect(redirectSettings.Redirects["Student"].RedirectUrl);
+                if (User.IsInRole(redirectSection.Value.GroupName))
+                {
+                    return Redirect(redirectSection.Value.RedirectUrl);
+                }
             }
 
-            // Staff
-            if (User.IsInRole(redirectSettings.Redirects["Staff"].GroupName))
-            {
-                return Redirect(redirectSettings.Redirects["Staff"].RedirectUrl);
-            }
-
-            // Adult Ed
-            if (User.IsInRole(redirectSettings.Redirects["AdultEd"].GroupName))
-            {
-                return Redirect(redirectSettings.Redirects["AdultEd"].RedirectUrl);
-            }
-
-            // The user isn't in any of the above groups, so redirect them elsewhere
+            // The user isn't in any of the configured groups, so redirect them elsewhere
             return Redirect(redirectSettings.DefaultRedirectUrl);
         }
     }
