@@ -5,8 +5,7 @@ using PortalRedirectDemo.Models;
 
 namespace PortalRedirectDemo.Controllers
 {
-    [Route("[controller]")]
-    [ApiController]
+    [Route("PortalRedirect")]
     [Authorize]
     public class PortalRedirectController : ControllerBase
     {
