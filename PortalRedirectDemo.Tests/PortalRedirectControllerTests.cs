@@ -20,9 +20,9 @@ namespace PortalRedirectDemo.Tests
             {
                 Redirects = new Dictionary<string, Redirect>
                 {
-                    { "Student", new Redirect { GroupName = "Students", RedirectUrl = "https://example.com/Student" } },
-                    { "Staff", new Redirect { GroupName = "Staff", RedirectUrl = "https://example.com/Staff" } },
-                    { "AdultEd", new Redirect { GroupName = "NotSureChangeThis", RedirectUrl = "https://example.com/AdultEd" } }
+                    { "Student", new Redirect { GroupSID = "S-1-5-21-1547161642-413027322-682003330-65676", RedirectUrl = "https://example.com/Student" } },
+                    { "Staff", new Redirect { GroupSID = "S-1-5-21-1547161642-413027322-682003330-1439", RedirectUrl = "https://example.com/Staff" } },
+                    { "AdultEd", new Redirect { GroupSID = "S-1-5-21-1547161642-413027322-682003330-80161", RedirectUrl = "https://example.com/AdultEd" } }
                 },
                 DefaultRedirectUrl = "https://example.com/Default"
             };
@@ -44,7 +44,7 @@ namespace PortalRedirectDemo.Tests
 
             // Mock the HttpContext and User 
             Mock<ClaimsPrincipal> userMock = new Mock<ClaimsPrincipal>();
-            userMock.Setup(m => m.IsInRole(redirectSettings.Redirects[testGroup].GroupName)).Returns(true);
+            userMock.Setup(m => m.IsInRole(redirectSettings.Redirects[testGroup].GroupSID)).Returns(true);
 
             Mock<HttpContext> httpContextMock = new Mock<HttpContext>();
             httpContextMock.SetupGet(m => m.User).Returns(userMock.Object);
