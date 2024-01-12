@@ -22,7 +22,7 @@ namespace PortalRedirectDemo.Controllers
             // Redirect if the user is in a configured group
             foreach (KeyValuePair<string, Redirect> redirectSection in redirectSettings.Redirects)
             {
-                if (User.IsInRole(redirectSection.Value.GroupSID))
+                if (User.IsInRole(redirectSection.Value.GroupName))
                 {
                     return Redirect(redirectSection.Value.RedirectUrl);
                 }

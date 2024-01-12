@@ -8,7 +8,7 @@
 
     public class Redirect
     {
-        public required string GroupSID { get; set; }
+        public required string GroupName { get; set; }
         public required string RedirectUrl { get; set; }
     }
 }
